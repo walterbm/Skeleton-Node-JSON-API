@@ -3,10 +3,14 @@ module.exports = function(sequelize, DataTypes) {
   var Asset = sequelize.define('Asset', {
     type: DataTypes.STRING,
     current_price: DataTypes.INTEGER
-  }, {
+  },
+  {
+    underscore: true
+  },
+  {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Asset.hasMany(models.Contract);
       }
     }
   });

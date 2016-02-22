@@ -4,10 +4,15 @@ module.exports = function(sequelize, DataTypes) {
     bidder_id: DataTypes.INTEGER,
     contract_id: DataTypes.INTEGER,
     seller_confirmed: DataTypes.BOOLEAN
-  }, {
+  },
+  {
+    underscore: true
+  },
+  {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Bid.belongsTo(models.User,{foreignKey: 'bidder_id', as: 'bidder'});
+        Bid.belongsTo(models.Contract);
       }
     }
   });

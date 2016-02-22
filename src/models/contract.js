@@ -13,7 +13,11 @@ module.exports = function(sequelize, DataTypes) {
     buyer_confimed: DataTypes.BOOLEAN,
     full_text: DataTypes.TEXT,
     strike_price: DataTypes.INTEGER
-  }, {
+  },
+  {
+    underscore: true
+  },
+  {
     classMethods: {
       associate: function(models) {
         // associations can be defined here

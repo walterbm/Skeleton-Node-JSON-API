@@ -8,10 +8,16 @@ module.exports = function(sequelize, DataTypes) {
     wallet_address: DataTypes.STRING,
     email: DataTypes.STRING,
     encrypted_password: DataTypes.STRING
-  }, {
+  },
+  {
+    underscore: true
+  },
+  {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        User.hasMany(models.Contract, {foreignKey: 'seller_id', as: 'sell_contracts'});
+        User.hasMany(models.Contract, {foreignKey: 'buyer_id', as: 'buy_contracts'});
+        User.hasMany(models.Bid, {foreignKey: 'bidder_id'});
       }
     }
   });
