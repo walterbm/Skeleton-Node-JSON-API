@@ -10,6 +10,8 @@
   "dependencies": {
     "hapi": "^13.0.0",
     "joi": "^8.0.2",
+    "pg": "^4.4.6",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^3.19.3"
   },
   "devDependencies": {
