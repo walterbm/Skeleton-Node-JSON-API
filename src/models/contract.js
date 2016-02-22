@@ -7,10 +7,16 @@ module.exports = function(sequelize, DataTypes) {
     address: DataTypes.STRING,
     premium: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
-    status: DataTypes.STRING,
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: 'Listed'
+    },
     start_time: DataTypes.DATE,
     end_time: DataTypes.DATE,
-    buyer_confimed: DataTypes.BOOLEAN,
+    buyer_confimed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     full_text: DataTypes.TEXT,
     strike_price: DataTypes.INTEGER
   },

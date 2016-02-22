@@ -3,7 +3,15 @@ module.exports = function(sequelize, DataTypes) {
   var Bid = sequelize.define('Bid', {
     bidder_id: DataTypes.INTEGER,
     contract_id: DataTypes.INTEGER,
-    seller_confirmed: DataTypes.BOOLEAN
+    seller_confirmed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+  },
+  {
+    indexes: [{
+      unique: true, fields: ['bidder_id,','contract_id']
+    }]
   },
   {
     underscore: true

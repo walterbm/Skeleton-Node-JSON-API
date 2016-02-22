@@ -5,8 +5,14 @@ module.exports = function(sequelize, DataTypes) {
     last_name: DataTypes.STRING,
     institution: DataTypes.STRING,
     physical_address: DataTypes.STRING,
-    wallet_address: DataTypes.STRING,
-    email: DataTypes.STRING,
+    wallet_address: {
+      type: DataTypes.STRING,
+      unique: true
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     encrypted_password: DataTypes.STRING
   },
   {
