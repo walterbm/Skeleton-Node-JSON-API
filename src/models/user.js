@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.Contract, {foreignKey: 'seller_id', as: 'sell_contracts'});
         User.hasMany(models.Contract, {foreignKey: 'buyer_id', as: 'buy_contracts'});
-        User.hasMany(models.Bid, {foreignKey: 'bidder_id'});
+        User.hasMany(models.Bid, {foreignKey: 'bidder_id', as: 'bids'});
       }
     }
   });

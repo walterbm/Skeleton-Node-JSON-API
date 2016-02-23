@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
   },
   {
     indexes: [{
-      unique: true, fields: ['bidder_id,','contract_id']
+      unique: true, fields: ['bidder_id','contract_id']
     }]
   },
   {

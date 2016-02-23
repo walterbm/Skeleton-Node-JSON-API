@@ -7,4 +7,4 @@
 3. Seed the database
   - `npm run db:seed`
 3. Start the server
-  - `npm serve`
+  - `npm start`

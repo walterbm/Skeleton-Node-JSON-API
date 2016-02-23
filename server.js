@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const models = require('./src/models/index');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -19,11 +20,12 @@ server.route({
     }
 });
 
-// Start the server
-server.start((err) => {
+models.sequelize.sync().then(function() {
+  // Start the server
+  server.start((err) => {
 
-    if (err) {
-        throw err;
-    }
-    console.log('Server running at:', server.info.uri);
+      if (err) { throw err; }
+
+      console.log('Server running at:', server.info.uri);
+  });
 });
