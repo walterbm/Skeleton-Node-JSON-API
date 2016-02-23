@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate": "sequelize db:migrate",
-    "db:seed": "",
+    "db:seed": "sequelize db:seed:all",
     "db:drop": "sequelize db:migrate:undo:all"
   },
   "author": "Walter Beller-Morales",

@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
   up: function (queryInterface, Sequelize) {
 
-      return queryInterface.bulkInsert('User', [
+      return queryInterface.bulkInsert('Users', [
         {
           first_name: "Walter",
           last_name: "Beller-Morales",
@@ -13,8 +13,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "walter@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Ryan",
@@ -24,8 +24,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "ryan@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Dylan",
@@ -35,8 +35,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "dylan@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "David",
@@ -46,8 +46,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "ziggy@stardust.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Jay",
@@ -57,8 +57,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "hova@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Taylor",
@@ -68,8 +68,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "tswift@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Casey",
@@ -79,8 +79,8 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "casey@slashquo.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           first_name: "Elon",
@@ -90,13 +90,13 @@ module.exports = {
           physical_address: "438 Fake Ave",
           email: "musk@everything.com",
           encrypted_password: bcrypt.hashSync('password', 8),
-          createdAt: Date.now(),
-          updatedAt: Date.now()
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
       ], {});
   },
 
   down: function (queryInterface, Sequelize) {
-      return queryInterface.bulkDelete('User', null, {});
+      return queryInterface.bulkDelete('Users', null, {});
   }
 };
