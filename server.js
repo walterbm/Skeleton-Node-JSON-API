@@ -1,27 +1,22 @@
 'use strict';
 
+// *** main dependencies *** //
 const Hapi = require('hapi');
-const models = require('./src/models/index');
+const models = require('./src/models');
+const routes = require('./src/routes');
 
-// Create a server with a host and port
+// *** create server *** //
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
     port: 8000
 });
 
-// Add the route
-server.route({
-    method: 'GET',
-    path:'/hello',
-    handler: function (request, reply) {
+// *** routes *** //
+server.route(routes);
 
-        return reply('hello world');
-    }
-});
-
+// *** sync the database and start the server *** //
 models.sequelize.sync().then(function() {
-  // Start the server
   server.start((err) => {
 
       if (err) { throw err; }
