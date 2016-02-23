@@ -2,14 +2,14 @@
   "name": "slashquo_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:migrate": "sequelize db:migrate",
     "db:seed": "",
     "db:drop": "sequelize db:migrate:undo:all"
   },
-  "author": "",
+  "author": "Walter Beller-Morales",
   "dependencies": {
     "bcrypt": "^0.8.5",
     "hapi": "^13.0.0",
