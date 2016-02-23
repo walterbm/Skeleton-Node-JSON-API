@@ -35,7 +35,7 @@ module.exports = {
       end_time: {
         type: Sequelize.DATE
       },
-      buyer_confimed: {
+      buyer_confirmed: {
         type: Sequelize.BOOLEAN
       },
       full_text: {
