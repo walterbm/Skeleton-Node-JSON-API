@@ -15,12 +15,28 @@ server.connection({
 // *** routes *** //
 server.route(routes);
 
-// *** sync the database and start the server *** //
-models.sequelize.sync().then(function() {
-  server.start((err) => {
 
-      if (err) { throw err; }
+server.register({
+    register: require('good'),
+    options: {
+      reporters: [{
+        reporter: require('good-console'),
+        events: { log: '*', response: '*' }
+      }]
+    }
+}, function (err) {
 
-      console.log('Server running at:', server.info.uri);
-  });
+    if (err) {
+        console.error(err);
+    } else {
+      // *** sync the database and start the server *** //
+      models.sequelize.sync().then(function() {
+        server.start((err) => {
+
+            if (err) { throw err; }
+
+            console.log('Server running at:', server.info.uri);
+        });
+      });
+    }
 });

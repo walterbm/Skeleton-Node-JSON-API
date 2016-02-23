@@ -12,6 +12,8 @@
   "author": "Walter Beller-Morales",
   "dependencies": {
     "bcrypt": "^0.8.5",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
     "hapi": "^13.0.0",
     "joi": "^8.0.2",
     "lodash": "^4.5.1",
