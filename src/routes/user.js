@@ -1,47 +1,39 @@
 'use strict';
 
-const userController = require('src/controllers/user');
-const userValidate = require('src/validate/user');
-
 module.exports = [
   {
   	method: 'GET',
   	path: '/users/{user_id}',
-  	config : {
-  		handler: userController.findByID,
-  		validate: userValidate.findByID
-  	}
+		handler: function (request, reply) {
+      return reply('user#show');
+    }
   },
   {
   	method: 'GET',
   	path: '/users',
-  	config : {
-  		handler: userController.find,
-  		validate : userValidate.find
-  	}
+		handler: function (request, reply) {
+      return reply('user#index');
+    }
   },
   {
   	method: 'POST',
   	path: '/users',
-  	config : {
-  		handler : userController.insert,
-  		validate : userValidate.insert
-  	}
+    handler: function (request, reply) {
+      return reply('user#new');
+    }
   },
   {
   	method: 'PUT',
   	path: '/users/{user_id}',
-  	config : {
-  		handler: userController.update,
-  		validate : userValidate.update
-  	}
+    handler: function (request, reply) {
+      return reply('user#update');
+    }
   },
   {
   	method: 'DELETE',
   	path: '/users/{user_id}',
-  	config : {
-  		handler: userController.delete,
-  		validate : userValidate.delete
-  	}
+    handler: function (request, reply) {
+      return reply('user#destroy');
+    }
   }
 ];
