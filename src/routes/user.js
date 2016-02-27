@@ -1,4 +1,5 @@
 'use strict';
+const Schema = require('../validate/user');
 
 module.exports = [
   {
@@ -11,7 +12,7 @@ module.exports = [
       description: 'Get one Users',
       notes: 'Returns the information for the user with id in the route',
       tags: ['api'],
-      validate: {}
+      validate: Schema.show
     }
   },
   {
@@ -24,7 +25,7 @@ module.exports = [
       description: 'Get all Users',
       notes: 'Returns an index view of all users',
       tags: ['api'],
-      validate: {}
+      validate: Schema.index
     }
   },
   {
@@ -37,7 +38,7 @@ module.exports = [
       description: 'Create a new User',
       notes: 'Registers a new user',
       tags: ['api'],
-      validate: {}
+      validate: Schema.create
     }
   },
   {
@@ -50,7 +51,7 @@ module.exports = [
       description: 'Updates a User',
       notes: 'Update user information',
       tags: ['api'],
-      validate: {}
+      validate: Schema.update
     }
   },
   {
@@ -63,7 +64,7 @@ module.exports = [
       description: 'Delete a User',
       notes: 'Remove a user from the database',
       tags: ['api'],
-      validate: {}
+      validate: Schema.delete
     }
   }
 ];
