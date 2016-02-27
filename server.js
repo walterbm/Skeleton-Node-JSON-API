@@ -9,6 +9,8 @@ const routes = require('./src/routes');
 const Inert = require('inert');
 const Vision = require('vision');
 const HapiSwagger = require('hapi-swagger');
+const Good = require('good');
+const GoodConsole = require('good-console');
 
 // *** create server *** //
 const server = new Hapi.Server();
@@ -17,44 +19,43 @@ server.connection({
     port: 4000
 });
 
-// *** routes *** //
+// *** load routes *** //
 server.route(routes);
 
-
-server.register([
-  {
-    register: require('good'),
-    options: {
-      reporters: [{
-        reporter: require('good-console'),
-        events: { log: '*', response: '*' }
-      }]
-    }
-  },
-  Inert,
-  Vision,
-  {
-    register: HapiSwagger,
-    options:  {
-      info: {
-          'title': 'SlashQuo API Documentation',
-          'version': '1.0',
+// *** register plugins *** //
+server.register(
+  [
+    {
+      register: Good,
+      options: {
+        reporters: [{
+          reporter: GoodConsole,
+          events: { log: '*', response: '*' }
+        }]
+      }
+    },
+    Inert,
+    Vision,
+    {
+      register: HapiSwagger,
+      options:  {
+        info: {
+            'title': 'SlashQuo API Documentation',
+            'version': '1.0',
+        }
       }
     }
+  ], function (err) {
+      if (err) { console.error(err); }
   }
-], function (err) {
+);
 
-    if (err) {
-        console.error(err);
-    } else {
-      // *** sync the database and start the server *** //
-      models.sequelize.sync().then(function() {
-        server.start((err) => {
+// *** sync the database and start the server *** //
+models.sequelize.sync().then(function() {
+  server.start((err) => {
 
-            if (err) { throw err; }
+      if (err) { throw err; }
 
-            console.log('Server running at:', server.info.uri);
-        });
-      });
-    }
+      console.log('Server running at:', server.info.uri);
+  });
 });
