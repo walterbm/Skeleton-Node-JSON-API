@@ -21,9 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     strike_price: DataTypes.INTEGER
   },
   {
-    underscored: true
-  },
-  {
+    underscored: true,
     classMethods: {
       associate: function(models) {
         // associations can be defined here

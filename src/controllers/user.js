@@ -8,7 +8,11 @@ module.exports = {
       });
   },
   show: function(request, reply) {
-    models.User.findById(request.params.user_id)
+    models.User.findById(request.params.user_id, {
+        include: [
+          {model: models.Bid, as: 'bids'}
+        ]
+      })
       .then(function(user) {
         return reply(user).code(200);
       });

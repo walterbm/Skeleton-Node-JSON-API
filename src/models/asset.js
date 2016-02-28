@@ -5,9 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     current_price: DataTypes.INTEGER
   },
   {
-    underscored: true
-  },
-  {
+    underscored: true,
     classMethods: {
       associate: function(models) {
         Asset.hasMany(models.Contract);

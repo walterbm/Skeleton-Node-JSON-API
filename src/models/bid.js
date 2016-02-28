@@ -11,18 +11,15 @@ module.exports = function(sequelize, DataTypes) {
   {
     indexes: [{
       unique: true, fields: ['bidder_id','contract_id']
-    }]
-  },
-  {
-    underscored: true
-  },
-  {
+    }],
+    underscored: true,
     classMethods: {
       associate: function(models) {
-        Bid.belongsTo(models.User,{foreignKey: 'bidder_id', as: 'bidder'});
-        Bid.belongsTo(models.Contract);
+        Bid.belongsTo(models.User,{foreignKey: 'bidder_id', as: 'bids'});
+        // Bid.belongsTo(models.Contract);
       }
     }
   });
+
   return Bid;
 };
