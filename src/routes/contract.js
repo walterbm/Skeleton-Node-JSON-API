@@ -40,7 +40,7 @@ module.exports = [
   	method: 'PUT',
   	path: '/contracts/{contract_id}',
     config: {
-      handler:Controller.update,
+      handler: Controller.update,
       description: 'Updates a Contract',
       notes: 'Update a contract',
       tags: ['api'],
