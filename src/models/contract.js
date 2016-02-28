@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     strike_price: DataTypes.INTEGER
   },
   {
-    underscore: true
+    underscored: true
   },
   {
     classMethods: {

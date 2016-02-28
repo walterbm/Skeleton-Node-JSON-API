@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     }]
   },
   {
-    underscore: true
+    underscored: true
   },
   {
     classMethods: {

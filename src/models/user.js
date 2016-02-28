@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     encrypted_password: DataTypes.STRING
   },
   {
-    underscore: true
+    underscored: true
   },
   {
     classMethods: {
