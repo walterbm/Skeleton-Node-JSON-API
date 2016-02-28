@@ -9,9 +9,7 @@ module.exports = {
     }
   },
   create: {
-    params: {
-      user_id: Joi.string().alphanum().required()
-    },
+    params: {},
     payload: {
       first_name: Joi.string(),
       last_name: Joi.string(),

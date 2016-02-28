@@ -1,15 +1,14 @@
 'use strict';
 const Schema = require('../validate/user');
+const Controller = require('../controllers/user');
 
 module.exports = [
   {
   	method: 'GET',
   	path: '/users/{user_id}',
     config: {
-      handler: function (request, reply) {
-        return reply('user#show');
-      },
-      description: 'Get one Users',
+      handler: Controller.show,
+      description: 'Get one User',
       notes: 'Returns the information for the user with id in the route',
       tags: ['api'],
       validate: Schema.show
@@ -19,9 +18,7 @@ module.exports = [
   	method: 'GET',
   	path: '/users',
     config: {
-      handler: function (request, reply) {
-        return reply('user#index');
-      },
+      handler: Controller.index,
       description: 'Get all Users',
       notes: 'Returns an index view of all users',
       tags: ['api'],
@@ -32,9 +29,7 @@ module.exports = [
   	method: 'POST',
   	path: '/users',
     config: {
-      handler: function (request, reply) {
-        return reply('user#new');
-      },
+      handler: Controller.create,
       description: 'Create a new User',
       notes: 'Registers a new user',
       tags: ['api'],
@@ -45,11 +40,9 @@ module.exports = [
   	method: 'PUT',
   	path: '/users/{user_id}',
     config: {
-      handler: function (request, reply) {
-        return reply('user#update');
-      },
+      handler:Controller.update,
       description: 'Updates a User',
-      notes: 'Update user information',
+      notes: 'Update a user\'s information',
       tags: ['api'],
       validate: Schema.update
     }
@@ -58,9 +51,7 @@ module.exports = [
   	method: 'DELETE',
   	path: '/users/{user_id}',
     config: {
-      handler: function (request, reply) {
-        return reply('user#destroy');
-      },
+      handler: Controller.destroy,
       description: 'Delete a User',
       notes: 'Remove a user from the database',
       tags: ['api'],
