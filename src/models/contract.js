@@ -24,7 +24,11 @@ module.exports = function(sequelize, DataTypes) {
     underscored: true,
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Contract.belongsTo(models.User, {foreignKey: 'buyer_id', as: 'buyer'});
+        Contract.belongsTo(models.User, {foreignKey: 'seller_id', as: 'seller'});
+        Contract.belongsTo(models.Asset, {foreignKey: 'asset_id', as: 'asset'});
+
+        Contract.hasMany(models.Bid, {foreignKey: 'contract_id', as: 'bids'});
       }
     }
   });

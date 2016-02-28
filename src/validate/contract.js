@@ -19,7 +19,10 @@ module.exports = {
       start_time: Joi.date(),
       end_time: Joi.date(),
       buyer_confirmed: Joi.boolean(),
-      full_text: Joi.string()
+      full_text: Joi.string(),
+      buyer_id: Joi.number(),
+      seller_id: Joi.number(),
+      asset_id: Joi.number(),
     }
   },
   update: {
@@ -35,7 +38,10 @@ module.exports = {
       start_time: Joi.date(),
       end_time: Joi.date(),
       buyer_confirmed: Joi.boolean(),
-      full_text: Joi.string()
+      full_text: Joi.string(),
+      buyer_id: Joi.number(),
+      seller_id: Joi.number(),
+      asset_id: Joi.number(),
     }
   },
   delete: {

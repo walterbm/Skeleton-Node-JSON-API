@@ -9,7 +9,12 @@ module.exports = {
   },
   show: function(request, reply) {
     models.Contract.findById(request.params.contract_id, {
-        include: [ ]
+        include: [
+          { model: models.Bid, as: 'bids'},
+          { model: models.User, as: 'buyer' },
+          { model: models.User, as: 'seller' },
+          { model: models.Asset, as: 'asset' }
+        ]
       })
       .then(function(contract) {
         return reply(contract).code(200);
