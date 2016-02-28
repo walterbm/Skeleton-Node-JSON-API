@@ -7,20 +7,20 @@ module.exports = {
         {
           type: "Bitcoin",
           current_price: 438190,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           type: "Gold Ounce",
           current_price: 1208510,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           type: "Crude Oil Barrel",
           current_price: 33.390,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ], {});
   },

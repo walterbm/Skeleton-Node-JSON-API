@@ -16,8 +16,8 @@ module.exports = {
           end_time: new Date("2015-04-01T14:00:00"),
           buyer_confirmed: true,
           full_text: "This is the full contract for contract number 1.",
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           buyer_id: 3,
@@ -32,8 +32,8 @@ module.exports = {
           end_time: new Date("2015-03-01T14:00:00"),
           buyer_confirmed: false,
           full_text: "This is the full contract for contract number 2.",
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ], {});
   },

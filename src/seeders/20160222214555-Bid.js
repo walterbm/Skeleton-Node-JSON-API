@@ -7,29 +7,29 @@ module.exports = {
           bidder_id: 4,
           contract_id: 1,
           seller_confirmed: false,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           bidder_id: 2,
           contract_id: 1,
           seller_confirmed: true,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           bidder_id: 5,
           contract_id: 2,
           seller_confirmed: false,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         },
         {
           bidder_id: 4,
           contract_id: 2,
           seller_confirmed: true,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ], {});
   },
