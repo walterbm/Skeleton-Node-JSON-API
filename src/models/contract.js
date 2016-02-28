@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     start_time: DataTypes.DATE,
     end_time: DataTypes.DATE,
-    buyer_confimed: {
+    buyer_confirmed: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
