@@ -1,5 +1,8 @@
 'use strict';
 
+// *** load environment variables *** //
+require('dotenv').config();
+
 // *** main dependencies *** //
 const Hapi = require('hapi');
 const models = require('./src/models');
@@ -46,7 +49,7 @@ server.register(
 
 // *** authentication *** //
 server.auth.strategy('jwt', 'jwt', 'required',  {
-  key: '315CC30C9184E744791DBA566A38950F8064275FF233776DB27DDAE0D1F96395',
+  key: process.env.SECRET_KEY,
   validateFunc: AuthValidate,
   verifyOptions: { algorithms: [ 'HS256' ] }
 });
