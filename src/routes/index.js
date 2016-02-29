@@ -1,6 +1,7 @@
-const user = require('./user');
-const contract = require('./contract');
 const bid = require('./bid');
+const user = require('./user');
+const auth = require('./auth');
 const asset = require('./asset');
+const contract = require('./contract');
 
-module.exports = [].concat(user, contract, bid, asset);
+module.exports = [].concat(user, contract, bid, asset, auth);
