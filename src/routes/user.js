@@ -7,6 +7,7 @@ module.exports = [
   	method: 'GET',
   	path: '/users/{user_id}',
     config: {
+      auth: 'jwt',
       handler: Controller.show,
       description: 'Get one User',
       notes: 'Returns the information for the user with id in the route',
