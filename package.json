@@ -12,6 +12,7 @@
   "author": "Walter Beller-Morales",
   "dependencies": {
     "bcrypt": "^0.8.5",
+    "blockapps-js": "^2.2.5",
     "dotenv": "^2.0.0",
     "good": "^6.6.0",
     "good-console": "^5.3.1",
