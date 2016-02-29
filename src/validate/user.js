@@ -2,14 +2,24 @@
 const Joi = require('joi');
 
 module.exports = {
-  index: {},
+  index: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown()
+  },
   show: {
     params: {
       user_id: Joi.string().alphanum().required()
-    }
+    },
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown()
   },
   create: {
     params: {},
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     payload: {
       first_name: Joi.string(),
       last_name: Joi.string(),
@@ -23,6 +33,9 @@ module.exports = {
     params: {
       user_id: Joi.string().alphanum().required()
     },
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     payload: {
       first_name: Joi.string(),
       last_name: Joi.string(),
@@ -35,6 +48,9 @@ module.exports = {
   delete: {
     params: {
       user_id: Joi.string().alphanum().required()
-    }
+    },
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
   }
 };

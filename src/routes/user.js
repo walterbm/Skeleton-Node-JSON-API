@@ -19,6 +19,7 @@ module.exports = [
   	method: 'GET',
   	path: '/users',
     config: {
+      auth: 'jwt',
       handler: Controller.index,
       description: 'Get all Users',
       notes: 'Returns an index view of all users',
@@ -30,6 +31,7 @@ module.exports = [
   	method: 'POST',
   	path: '/users',
     config: {
+      auth: 'jwt',
       handler: Controller.create,
       description: 'Create a new User',
       notes: 'Registers a new user',
@@ -41,6 +43,7 @@ module.exports = [
   	method: 'PUT',
   	path: '/users/{user_id}',
     config: {
+      auth: 'jwt',
       handler:Controller.update,
       description: 'Updates a User',
       notes: 'Update a user\'s information',
@@ -52,6 +55,7 @@ module.exports = [
   	method: 'DELETE',
   	path: '/users/{user_id}',
     config: {
+      auth: 'jwt',
       handler: Controller.destroy,
       description: 'Delete a User',
       notes: 'Remove a user from the database',
