@@ -9,6 +9,7 @@ const models = require('./src/models');
 const routes = require('./src/routes');
 
 // *** authentication dependencies *** //
+const JWT = require('jsonwebtoken');
 const AuthJWT = require('hapi-auth-jwt2');
 const AuthValidate = require('./src/middleware/auth_jwt_validate');
 
@@ -43,7 +44,6 @@ server.register(
     }
   ], function (err) {
       if (err) { console.error(err); }
-
   }
 );
 
@@ -71,7 +71,6 @@ server.register(
     }
   ], function (err) {
       if (err) { console.error(err); }
-
   }
 );
 
