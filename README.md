@@ -6,5 +6,10 @@
   - `npm run db:migrate`
 3. Seed the database
   - `npm run db:seed`
-3. Start the server
+4. Set up environment variables
+  - create a `.env` file
+  - add a `SECRET_KEY`
+5. Start the server
   - `npm start`
+6. View the API documentation
+  - `/documentation`
