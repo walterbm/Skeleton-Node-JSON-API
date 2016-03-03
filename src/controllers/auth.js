@@ -12,6 +12,9 @@ module.exports = {
     .then(function(user) {
       let token = JWT.sign(user.id, process.env.SECRET_KEY);
       return reply({"Authorization": token}).code(200);
+    })
+    .catch(function(e){
+      return reply({"Error": "Incorrect credentials"}).code(401);
     });
   },
   logout: function(request, reply) {

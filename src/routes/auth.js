@@ -19,7 +19,7 @@ module.exports = [
   	method: 'POST',
   	path: '/logout',
     config: {
-      auth: 'jwt',
+      auth: false,
       handler: Controller.logout,
       description: 'Log out a user',
       notes: 'Deletes the user\'s JWT authentication token',
