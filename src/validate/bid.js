@@ -3,17 +3,26 @@ const Joi = require('joi');
 
 module.exports = {
   index: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       contract_id: Joi.string().alphanum().required()
     }
   },
   show: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       contract_id: Joi.string().alphanum().required(),
       bid_id: Joi.string().alphanum().required()
     }
   },
   create: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       contract_id: Joi.string().alphanum().required()
     },
@@ -23,6 +32,9 @@ module.exports = {
     }
   },
   update: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       contract_id: Joi.string().alphanum().required(),
       bid_id: Joi.string().alphanum().required()
@@ -33,6 +45,9 @@ module.exports = {
     }
   },
   delete: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       contract_id: Joi.string().alphanum().required(),
       bid_id: Joi.string().alphanum().required()
