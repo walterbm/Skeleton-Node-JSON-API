@@ -5,8 +5,9 @@ const Controller = require('../controllers/asset');
 module.exports = [
   {
   	method: 'GET',
-  	path: '/asset/{asset_id}',
+  	path: '/assets/{asset_id}',
     config: {
+      auth: 'jwt',
       handler: Controller.show,
       description: 'Get one Asset',
       notes: 'Returns the information for the asset matching the id in the route',
@@ -16,8 +17,9 @@ module.exports = [
   },
   {
   	method: 'GET',
-  	path: '/asset',
+  	path: '/assets',
     config: {
+      auth: 'jwt',
       handler: Controller.index,
       description: 'Get all Assets',
       notes: 'Returns an index view of all asset',
@@ -27,8 +29,9 @@ module.exports = [
   },
   {
   	method: 'POST',
-  	path: '/asset',
+  	path: '/assets',
     config: {
+      auth: 'jwt',
       handler: Controller.create,
       description: 'Create a new Asset',
       notes: 'Registers a new asset',
@@ -38,8 +41,9 @@ module.exports = [
   },
   {
   	method: 'PUT',
-  	path: '/asset/{asset_id}',
+  	path: '/assets/{asset_id}',
     config: {
+      auth: 'jwt',
       handler: Controller.update,
       description: 'Updates a Asset',
       notes: 'Update a asset',
@@ -49,8 +53,9 @@ module.exports = [
   },
   {
   	method: 'DELETE',
-  	path: '/asset/{asset_id}',
+  	path: '/assets/{asset_id}',
     config: {
+      auth: 'jwt',
       handler: Controller.destroy,
       description: 'Delete a Asset',
       notes: 'Remove a asset from the database',

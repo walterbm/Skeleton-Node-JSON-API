@@ -2,13 +2,23 @@
 const Joi = require('joi');
 
 module.exports = {
-  index: {},
+  index: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown()
+  },
   show: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       asset_id: Joi.string().alphanum().required()
     }
   },
   create: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {},
     payload: {
       type: Joi.string(),
@@ -16,6 +26,9 @@ module.exports = {
     }
   },
   update: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       asset_id: Joi.string().alphanum().required()
     },
@@ -25,6 +38,9 @@ module.exports = {
     }
   },
   delete: {
+    headers: Joi.object({
+         authorization: Joi.string().required()
+    }).unknown(),
     params: {
       asset_id: Joi.string().alphanum().required()
     }
