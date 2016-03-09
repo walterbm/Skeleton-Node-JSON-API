@@ -24,7 +24,12 @@ const GoodConsole = require('good-console');
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
-    port: 4000
+    port: 4000,
+    routes: {
+      cors: {
+        "headers": ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
+      }
+    }
 });
 
 // *** register main plugins *** //
