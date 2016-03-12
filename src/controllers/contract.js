@@ -2,7 +2,14 @@ const models = require('../models');
 
 module.exports = {
   index: function(request, reply) {
-    models.Contract.findAll()
+    models.Contract.findAll({
+        include: [
+          { model: models.Bid, as: 'bids'},
+          { model: models.User, as: 'buyer' },
+          { model: models.User, as: 'seller' },
+          { model: models.Asset, as: 'asset' }
+        ]
+      })
       .then(function(contracts) {
         return reply(contracts).code(200);
       });
