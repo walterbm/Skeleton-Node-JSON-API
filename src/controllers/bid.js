@@ -1,4 +1,5 @@
 const models = require('../models');
+const _ = require('lodash');
 
 module.exports = {
   index: function(request, reply) {
@@ -20,9 +21,9 @@ module.exports = {
       });
   },
   create: function(request, reply) {
-    models.Bid.create(request.payload)
+    models.Bid.create(_.merge({buyer_id: request.auth.credentials}, request.payload))
       .then(function(contract) {
-        return reply(contract).code(200);
+        return reply(true).code(200);
       });
   },
   update: function(request, reply) {
