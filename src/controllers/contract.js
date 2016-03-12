@@ -28,7 +28,7 @@ module.exports = {
       });
   },
   create: function(request, reply) {
-    models.Contract.create(request.payload)
+    models.Contract.create(_.merge({seller_id: request.auth.credentials}, request.payload))
       .then(function(contract) {
         return reply(contract).code(200);
       });
