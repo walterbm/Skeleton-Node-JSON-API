@@ -11,7 +11,7 @@ module.exports = {
           institution: "Bank of Maryland",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "walter@slashquo.com",
+          email: "walter@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -22,7 +22,7 @@ module.exports = {
           institution: "Union Bank",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "ryan@slashquo.com",
+          email: "ryan@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -33,7 +33,7 @@ module.exports = {
           institution: "Dickinson Credit Union",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "dylan@slashquo.com",
+          email: "dylan@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -55,7 +55,7 @@ module.exports = {
           institution: "Barclays",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "hova@slashquo.com",
+          email: "hova@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -66,7 +66,7 @@ module.exports = {
           institution: "Big Machine",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "tswift@slashquo.com",
+          email: "tswift@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -77,7 +77,7 @@ module.exports = {
           institution: "Chase",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "casey@slashquo.com",
+          email: "casey@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()
@@ -88,7 +88,7 @@ module.exports = {
           institution: "Paypal",
           wallet_address: "fake-wallet-address",
           physical_address: "438 Fake Ave",
-          email: "musk@everything.com",
+          email: "musk@testapi.com",
           encrypted_password: bcrypt.hashSync('password', 8),
           created_at: new Date(),
           updated_at: new Date()

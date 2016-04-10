@@ -68,7 +68,7 @@ server.register(
       register: HapiSwagger,
       options:  {
         info: {
-            title: 'SlashQuo API Documentation',
+            title: 'API Documentation',
             version: '1.0'
         },
         auth: false
