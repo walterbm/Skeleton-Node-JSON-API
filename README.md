@@ -1,4 +1,12 @@
-# Setup Instructions
+# Skeleton Node JSON API (with hapi.js)
+
+## About
+
+## Features
+
+## Screenshots
+
+## Setup Instructions
 1. Create a new postgres database (make sure the :elephant: is running on port `5432`)
   - `createuser postgres`
   - `createdb -Opostgres -Eutf8 api_development`
@@ -13,3 +21,7 @@
   - `npm start`
 6. View the API documentation
   - `/documentation`
+
+## Author
+
+## License
